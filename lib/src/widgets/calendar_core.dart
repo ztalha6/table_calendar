@@ -178,6 +178,9 @@ class CalendarCore extends StatelessWidget {
         day = DateTime.utc(prevFocusedDay.year, prevFocusedDay.month,
             prevFocusedDay.day + pageDif * 7);
         break;
+      case CalendarFormat.day:
+        day = DateTime.now();
+        break;
     }
 
     if (day.isBefore(firstDay)) {
@@ -203,6 +206,9 @@ class CalendarCore extends StatelessWidget {
       case CalendarFormat.week:
         day = DateTime.utc(
             firstDay.year, firstDay.month, firstDay.day + pageIndex * 7);
+        break;
+      case CalendarFormat.day:
+        day = DateTime.now();
         break;
     }
 
